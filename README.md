@@ -85,7 +85,7 @@ g++ filename.cpp
 
 ## 👤 Author
 
-* YOUR_NAME
-* Roll No: YOUR_ROLL_NO
+* Vameshi Saini
+* Roll No: 1024150274
 * Batch: 2031
 * Thapar Institute of Engineering and Technology
