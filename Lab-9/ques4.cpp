@@ -2,20 +2,31 @@
 #include <fstream>
 using namespace std;
 int main() {
-    ifstream fin("source.txt");
-    if (!fin) {
-        cout << "Source file not found!";
+    char str[200];
+    cout << "Enter a string: ";
+    cin.getline(str, 200);
+    int length = 0;
+    while (str[length] != '\0') {
+        length++;
+    }
+    cout << "Length of string: " << length << endl;
+    ofstream fout("data.txt");
+    if (!fout) {
+        cout << "Error creating file!";
         return 1;
     }
-    ofstream fout("destination.txt");
-    if (!fout) {
-        cout << "Destination file cannot be created!";
+    fout << str;
+    fout.close();
+    ifstream fin("data.txt");
+    if (!fin) {
+        cout << "Error opening file!";
         return 1;
     }
     char ch;
+    cout << "\nContent read from file:\n";
     while (fin.get(ch)) {
-        fout.put(ch);
+        cout << ch;
     }
-    cout << "File copied successfully!";
+    fin.close();
     return 0;
 }
